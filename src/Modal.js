@@ -63,15 +63,16 @@ export default function Modal() {
     }
 
     return (
-        <div>
-            {!vali && (
-                <div>
-                    <h1>User Details Modal</h1>
-                    <button onClick={() => setvali(true)}>Open Form</button>
-                </div>
-            )}
-            {vali && (
-                <div className="modal">
+    <div>
+        {!vali && (
+            <div>
+                <h1>User Details Modal</h1>
+                <button onClick={() => setvali(true)}>Open Form</button>
+            </div>
+        )}
+        {vali && (
+            <div className="modal"> {/* Fullscreen overlay */}
+                <div className="modal-overlay"> {/* Optional for styling */}
                     <div className="modal-content" ref={dataRef}>
                         <form className="form" onSubmit={handleSubmit}>
                             <h2>Fill Details</h2>
@@ -87,7 +88,9 @@ export default function Modal() {
                         </form>
                     </div>
                 </div>
-            )}
-        </div>
-    );
+            </div>
+        )}
+    </div>
+);
+
 }
